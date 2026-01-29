@@ -2,19 +2,6 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Strings {
-
-    public static String readStrFromUser(Scanner scanner, String prompt) {
-        while (true) {
-            try {
-                System.out.print(prompt);
-                return scanner.nextLine();
-            } catch (NoSuchElementException e) {
-                System.out.println("Ввод прерван, программа завершена.");
-                System.exit(1);
-            }
-        }
-    }
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -25,6 +12,18 @@ public class Strings {
             System.out.println("Строки идентичны.");
         } else {
             System.out.println("Строки неидентичные.");
+        }
+    }
+    
+    private static String readStrFromUser(Scanner scanner, String prompt) {
+        while (true) {
+            try {
+                System.out.print(prompt);
+                return scanner.nextLine();
+            } catch (NoSuchElementException e) {
+                System.out.println("Ввод прерван, программа завершена.");
+                System.exit(1);
+            }
         }
     }
 }
