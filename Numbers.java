@@ -3,22 +3,6 @@ import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 
 public class Numbers {
-
-    public static int readIntFromUser(Scanner scanner, String prompt) {
-        while (true) {
-            try {
-                System.out.print(prompt);
-                return scanner.nextInt();
-            } catch (InputMismatchException e) {
-                System.out.println("Вы ввели не целое число, пожалуйста, попробуйте снова.");
-                scanner.nextLine();
-            } catch (NoSuchElementException e) {
-                System.out.println("Ввод прерван, программа завершена.");
-                System.exit(1);
-            }
-        }
-    }
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -46,5 +30,20 @@ public class Numbers {
         }
         
         scanner.close();
+    }
+    
+    private static int readIntFromUser(Scanner scanner, String prompt) {
+        while (true) {
+            try {
+                System.out.print(prompt);
+                return scanner.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Вы ввели не целое число, пожалуйста, попробуйте снова.");
+                scanner.nextLine();
+            } catch (NoSuchElementException e) {
+                System.out.println("Ввод прерван, программа завершена.");
+                System.exit(1);
+            }
+        }
     }
 }
